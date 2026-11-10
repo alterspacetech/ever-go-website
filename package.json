@@ -1,0 +1,19 @@
+{
+  "name": "evergo-fragrance",
+  "private": true,
+  "version": "2.0.0",
+  "engines": {
+    "node": ">=22.12"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build"
+  },
+  "dependencies": {
+    "@sanity/client": "^8.15.0",
+    "groq-js": "^2.0.1",
+    "next": "^16.4.5",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  }
+}

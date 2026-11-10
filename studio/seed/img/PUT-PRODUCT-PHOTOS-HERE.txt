@@ -1,0 +1,2 @@
+Put product photos here before running "npm run import".
+Name each file exactly as in the "Photo File Name" column of products.tsv.

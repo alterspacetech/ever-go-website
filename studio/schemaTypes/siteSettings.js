@@ -1,0 +1,171 @@
+import { defineArrayMember, defineField, defineType } from "sanity";
+
+export const siteSettings = defineType({
+  name: "siteSettings",
+  title: "Site settings",
+  type: "document",
+  groups: [
+    { name: "contact", title: "WhatsApp & contact", default: true },
+    { name: "home", title: "Home page" },
+    { name: "delivery", title: "Delivery & returns" },
+    { name: "text", title: "Page text" },
+  ],
+  fields: [
+    defineField({ name: "whatsappNumber", title: "WhatsApp number", description: "267 then the number, digits only. Orders go here.", type: "string", group: "contact", validation: (r) => r.required().regex(/^\d{8,15}$/, { name: "digits only" }) }),
+    defineField({ name: "whatsappDisplay", title: "WhatsApp number as shown on the site", type: "string", group: "contact", validation: (r) => r.required() }),
+    defineField({ name: "address", title: "Shop address", type: "text", rows: 2, group: "contact" }),
+    defineField({ name: "openingHours", title: "Opening hours", type: "text", rows: 3, group: "contact" }),
+    defineField({ name: "phone", title: "Phone", type: "string", group: "contact" }),
+    defineField({ name: "email", title: "Email", type: "string", group: "contact" }),
+    defineField({ name: "facebook", title: "Facebook link", type: "url", group: "contact" }),
+    defineField({ name: "instagram", title: "Instagram link", type: "url", group: "contact" }),
+    defineField({ name: "tiktok", title: "TikTok link", type: "url", group: "contact" }),
+
+    defineField({ name: "promoText", title: "Header offer text", description: "For example Any 30 ml perfume. Leave empty to hide the offer.", type: "string", group: "home" }),
+    defineField({ name: "promoPrice", title: "Header offer price", description: "For example P35.", type: "string", group: "home" }),
+    defineField({
+      name: "heroSlides",
+      title: "Hero slides",
+      type: "array",
+      group: "home",
+      validation: (r) => r.max(6),
+      of: [
+        defineArrayMember({
+          type: "object",
+          name: "heroSlide",
+          fields: [
+            defineField({ name: "eyebrow", title: "Small heading", type: "string" }),
+            defineField({ name: "eyebrowArabic", title: "Small heading in Arabic", type: "string" }),
+            defineField({ name: "titleBefore", title: "Title, first part", type: "string" }),
+            defineField({ name: "titleAccent", title: "Title, red part", type: "string" }),
+            defineField({ name: "titleAfter", title: "Title, last part", type: "string" }),
+            defineField({ name: "text", title: "Text", type: "text", rows: 2 }),
+            defineField({ name: "primaryLabel", title: "Main button text", type: "string" }),
+            defineField({ name: "primaryLink", title: "Main button link", description: "For example /shop/perfumes", type: "string" }),
+            defineField({ name: "secondaryLabel", title: "Second button text", type: "string" }),
+            defineField({ name: "secondaryLink", title: "Second button link", type: "string" }),
+            defineField({ name: "green", title: "Green background", type: "boolean", initialValue: false }),
+            defineField({ name: "image", title: "Image", description: "Used first if set.", type: "image" }),
+            defineField({ name: "product", title: "Or show this product", type: "reference", to: [{ type: "product" }] }),
+          ],
+          preview: {
+            select: { a: "titleBefore", b: "titleAccent", media: "image" },
+            prepare: ({ a, b, media }) => ({ title: `${a || ""}${b || ""}`, media }),
+          },
+        }),
+      ],
+    }),
+    defineField({
+      name: "bestsellers",
+      title: "Bestsellers",
+      description: "Shown first in the Bestsellers row.",
+      type: "array",
+      group: "home",
+      of: [defineArrayMember({ type: "reference", to: [{ type: "product" }] })],
+    }),
+
+    defineField({ name: "deliveryText", title: "Delivery information", description: "Leave a blank line between paragraphs.", type: "text", rows: 5, group: "delivery" }),
+    defineField({ name: "returnsText", title: "Returns policy", description: "Leave a blank line between paragraphs.", type: "text", rows: 5, group: "delivery" }),
+    defineField({
+      name: "courierFees",
+      title: "Courier fees by town",
+      description: "Customers choose a town in the bag and the fee is added to the total. Leave empty to show plus courier.",
+      type: "array",
+      group: "delivery",
+      of: [
+        defineArrayMember({
+          type: "object",
+          name: "courierFee",
+          fields: [
+            defineField({ name: "town", title: "Town", type: "string", validation: (r) => r.required() }),
+            defineField({ name: "fee", title: "Fee (P)", type: "number", validation: (r) => r.required().min(0) }),
+          ],
+          preview: {
+            select: { title: "town", fee: "fee" },
+            prepare: ({ title, fee }) => ({ title, subtitle: `P${fee}` }),
+          },
+        }),
+      ],
+    }),
+
+    defineField({ name: "courierName", title: "Courier name", type: "string", group: "delivery" }),
+    defineField({ name: "deliveryLine", title: "Delivery line in the top bar", type: "string", group: "delivery" }),
+    defineField({ name: "paymentMethods", title: "Payment methods", type: "array", of: [defineArrayMember({ type: "string" })], options: { layout: "tags" }, group: "delivery" }),
+    defineField({ name: "paymentNote", title: "Payment note", type: "string", group: "delivery" }),
+    defineField({ name: "howOrderingText", title: "How ordering works", type: "text", rows: 3, group: "delivery" }),
+
+    defineField({
+      name: "perks",
+      title: "Benefits under the hero",
+      type: "array",
+      group: "home",
+      of: [
+        defineArrayMember({
+          type: "object",
+          name: "perk",
+          fields: [
+            defineField({ name: "icon", title: "Icon", type: "string", options: { list: ["truck", "card", "chat", "bulk"] } }),
+            defineField({ name: "title", title: "Title", type: "string" }),
+            defineField({ name: "text", title: "Text", type: "string" }),
+          ],
+        }),
+      ],
+    }),
+    defineField({
+      name: "scentBand",
+      title: "Moving scent band",
+      description: "Leave empty to hide the band.",
+      type: "array",
+      group: "home",
+      of: [
+        defineArrayMember({
+          type: "object",
+          name: "scentWord",
+          fields: [
+            defineField({ name: "english", title: "English", type: "string" }),
+            defineField({ name: "arabic", title: "Arabic", type: "string" }),
+          ],
+          preview: { select: { title: "english", subtitle: "arabic" } },
+        }),
+      ],
+    }),
+    defineField({ name: "collectionsTitle", title: "Collections heading", type: "string", group: "text" }),
+    defineField({ name: "collectionsIntro", title: "Collections text", type: "string", group: "text" }),
+    defineField({ name: "scentsTitle", title: "Scent links heading", type: "string", group: "text" }),
+    defineField({ name: "latestTitle", title: "Latest products heading", type: "string", group: "text" }),
+    defineField({ name: "latestIntro", title: "Latest products text", type: "string", group: "text" }),
+    defineField({ name: "sourceTitle", title: "Special order band heading", type: "string", group: "text" }),
+    defineField({ name: "sourceText", title: "Special order band text", type: "text", rows: 2, group: "text" }),
+    defineField({ name: "sourceButton", title: "Special order band button", type: "string", group: "text" }),
+    defineField({ name: "bestsellersTitle", title: "Bestsellers heading", type: "string", group: "text" }),
+    defineField({ name: "bestsellersIntro", title: "Bestsellers text", type: "string", group: "text" }),
+    defineField({ name: "stepsTitle", title: "How to order heading", type: "string", group: "text" }),
+    defineField({
+      name: "orderSteps",
+      title: "How to order steps",
+      type: "array",
+      group: "text",
+      of: [
+        defineArrayMember({
+          type: "object",
+          name: "orderStep",
+          fields: [
+            defineField({ name: "title", title: "Title", type: "string" }),
+            defineField({ name: "text", title: "Text", type: "text", rows: 2 }),
+          ],
+        }),
+      ],
+    }),
+    defineField({ name: "brandsTitle", title: "Brands heading", type: "string", group: "text" }),
+    defineField({ name: "brandsHomeIntro", title: "Brands text on the home page", type: "string", group: "text" }),
+    defineField({ name: "brandsIntro", title: "Brands page text", type: "string", group: "text" }),
+    defineField({ name: "shopIntro", title: "Shop page text", type: "text", rows: 2, group: "text" }),
+    defineField({ name: "specialOrdersIntro", title: "Special orders page text", type: "text", rows: 2, group: "text" }),
+    defineField({ name: "signupTitle", title: "Sign-up heading", type: "string", group: "text" }),
+    defineField({ name: "signupText", title: "Sign-up text", type: "text", rows: 2, group: "text" }),
+    defineField({ name: "footerImage", title: "Footer image", description: "Optional. Shows beside the sign-up form.", type: "image", group: "text" }),
+    defineField({ name: "footerBlurb", title: "Footer description", type: "string", group: "text" }),
+    defineField({ name: "priceNote", title: "Currency note in the footer", type: "string", group: "text" }),
+  ],
+  preview: { prepare: () => ({ title: "Site settings" }) },
+});

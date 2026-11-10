@@ -1,0 +1,26 @@
+{
+  "name": "evergo-studio",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "engines": {
+    "node": ">=22.12"
+  },
+  "scripts": {
+    "dev": "sanity dev",
+    "build": "sanity build",
+    "deploy": "sanity deploy",
+    "import": "node --env-file=.env scripts/import.mjs",
+    "import:replace": "node --env-file=.env scripts/import.mjs --replace",
+    "seed:settings": "node --env-file=.env scripts/import.mjs --settings",
+    "sample": "node scripts/import.mjs --dry"
+  },
+  "dependencies": {
+    "@sanity/client": "^8.15.0",
+    "@sanity/vision": "^6.22.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "sanity": "^6.22.0",
+    "styled-components": "^6.6.0"
+  }
+}

@@ -1,0 +1,731 @@
+[
+  {
+    "_id": "category-perfumes",
+    "_type": "category",
+    "title": "Perfumes",
+    "slug": {
+      "_type": "slug",
+      "current": "perfumes"
+    },
+    "arabicName": "عطور",
+    "blurb": "Long-lasting Arabian and designer-inspired perfumes. Every 30 ml bottle is P35.",
+    "sortOrder": 1,
+    "_createdAt": "2026-01-01T00:00:00Z"
+  },
+  {
+    "_id": "category-oils",
+    "_type": "category",
+    "title": "Perfume oils",
+    "slug": {
+      "_type": "slug",
+      "current": "oils"
+    },
+    "arabicName": "زيوت عطرية",
+    "blurb": "Alcohol-free roll-ons and dip sticks that sit close to the skin.",
+    "sortOrder": 2,
+    "_createdAt": "2026-01-01T00:00:00Z"
+  },
+  {
+    "_id": "category-bukhoor",
+    "_type": "category",
+    "title": "Bukhoor",
+    "slug": {
+      "_type": "slug",
+      "current": "bukhoor"
+    },
+    "arabicName": "بخور",
+    "blurb": "Burners, bukhoor and oud chips to scent the whole home.",
+    "sortOrder": 3,
+    "_createdAt": "2026-01-01T00:00:00Z"
+  },
+  {
+    "_id": "category-beauty",
+    "_type": "category",
+    "title": "Beauty care",
+    "slug": {
+      "_type": "slug",
+      "current": "beauty"
+    },
+    "arabicName": "عناية",
+    "blurb": "Lotions, mists and everyday body care.",
+    "sortOrder": 4,
+    "_createdAt": "2026-01-01T00:00:00Z"
+  },
+  {
+    "_id": "category-more",
+    "_type": "category",
+    "title": "More",
+    "slug": {
+      "_type": "slug",
+      "current": "more"
+    },
+    "arabicName": "المزيد",
+    "blurb": "Sports, gifts and everything else on the shelf.",
+    "sortOrder": 5,
+    "_createdAt": "2026-01-01T00:00:00Z"
+  },
+  {
+    "_id": "brand-lattafa",
+    "_type": "brand",
+    "name": "Lattafa",
+    "slug": {
+      "_type": "slug",
+      "current": "lattafa"
+    },
+    "_createdAt": "2026-01-01T00:00:00Z"
+  },
+  {
+    "_id": "brand-ever-go",
+    "_type": "brand",
+    "name": "Ever-Go",
+    "slug": {
+      "_type": "slug",
+      "current": "ever-go"
+    },
+    "_createdAt": "2026-01-01T00:00:00Z"
+  },
+  {
+    "_id": "bulk-roll-on-dip-stick-oil-3ml",
+    "_type": "bulkRule",
+    "productType": "Roll-on / Dip stick (oil)",
+    "size": "3ml",
+    "bulkTiers": [
+      {
+        "_type": "tier",
+        "_key": "t6",
+        "minQty": 6,
+        "price": 13
+      },
+      {
+        "_type": "tier",
+        "_key": "t12",
+        "minQty": 12,
+        "price": 11
+      }
+    ],
+    "_createdAt": "2026-01-01T00:00:00Z"
+  },
+  {
+    "_id": "bulk-roll-on-dip-stick-oil-6ml",
+    "_type": "bulkRule",
+    "productType": "Roll-on / Dip stick (oil)",
+    "size": "6ml",
+    "bulkTiers": [
+      {
+        "_type": "tier",
+        "_key": "t6",
+        "minQty": 6,
+        "price": 30
+      },
+      {
+        "_type": "tier",
+        "_key": "t12",
+        "minQty": 12,
+        "price": 25
+      }
+    ],
+    "_createdAt": "2026-01-01T00:00:00Z"
+  },
+  {
+    "_id": "product-khamrah",
+    "_type": "product",
+    "name": "Khamrah",
+    "slug": {
+      "_type": "slug",
+      "current": "khamrah"
+    },
+    "category": {
+      "_type": "reference",
+      "_ref": "category-perfumes"
+    },
+    "productType": "Perfume",
+    "audience": "Unisex",
+    "scentNotes": [
+      "Sweet",
+      "spicy",
+      "amber"
+    ],
+    "description": "Warm and sweet with cinnamon, dates and vanilla. A favourite for evenings and cooler days.",
+    "sizes": [
+      {
+        "_type": "sizeOption",
+        "_key": "s-0-30ml",
+        "label": "30ml",
+        "price": 35,
+        "inStock": true,
+        "bulkTiers": [
+          {
+            "_type": "tier",
+            "_key": "t6",
+            "minQty": 6,
+            "price": 32
+          },
+          {
+            "_type": "tier",
+            "_key": "t12",
+            "minQty": 12,
+            "price": 30
+          }
+        ]
+      }
+    ],
+    "badge": "bestseller",
+    "sortOrder": 1,
+    "_createdAt": "2026-01-01T00:00:00Z"
+  },
+  {
+    "_id": "product-oud-mood",
+    "_type": "product",
+    "name": "Oud Mood",
+    "slug": {
+      "_type": "slug",
+      "current": "oud-mood"
+    },
+    "category": {
+      "_type": "reference",
+      "_ref": "category-perfumes"
+    },
+    "productType": "Perfume",
+    "audience": "Unisex",
+    "scentNotes": [
+      "Oud",
+      "rose",
+      "amber"
+    ],
+    "description": "Smooth oud softened with rose and a touch of sweetness. Easy to wear every day.",
+    "sizes": [
+      {
+        "_type": "sizeOption",
+        "_key": "s-0-30ml",
+        "label": "30ml",
+        "price": 35,
+        "inStock": true
+      }
+    ],
+    "badge": "new",
+    "sortOrder": 2,
+    "_createdAt": "2026-01-01T00:00:00Z"
+  },
+  {
+    "_id": "product-lattafa-asad",
+    "_type": "product",
+    "name": "Lattafa Asad",
+    "slug": {
+      "_type": "slug",
+      "current": "lattafa-asad"
+    },
+    "category": {
+      "_type": "reference",
+      "_ref": "category-perfumes"
+    },
+    "brand": {
+      "_type": "reference",
+      "_ref": "brand-lattafa"
+    },
+    "productType": "Perfume",
+    "audience": "Men",
+    "scentNotes": [
+      "Spicy",
+      "amber",
+      "vanilla"
+    ],
+    "description": "Bold, long-lasting Arabic perfume with warm spicy notes.",
+    "sizes": [
+      {
+        "_type": "sizeOption",
+        "_key": "s-0-30ml",
+        "label": "30ml",
+        "price": 45,
+        "inStock": true,
+        "bulkTiers": [
+          {
+            "_type": "tier",
+            "_key": "t6",
+            "minQty": 6,
+            "price": 40
+          }
+        ]
+      },
+      {
+        "_type": "sizeOption",
+        "_key": "s-1-100ml",
+        "label": "100ml",
+        "price": 150,
+        "inStock": true,
+        "bulkTiers": [
+          {
+            "_type": "tier",
+            "_key": "t6",
+            "minQty": 6,
+            "price": 135
+          },
+          {
+            "_type": "tier",
+            "_key": "t12",
+            "minQty": 12,
+            "price": 120
+          }
+        ]
+      }
+    ],
+    "badge": "bestseller",
+    "sortOrder": 3,
+    "_createdAt": "2026-01-01T00:00:00Z"
+  },
+  {
+    "_id": "product-ward-taifi",
+    "_type": "product",
+    "name": "Ward Taifi",
+    "slug": {
+      "_type": "slug",
+      "current": "ward-taifi"
+    },
+    "category": {
+      "_type": "reference",
+      "_ref": "category-perfumes"
+    },
+    "brand": {
+      "_type": "reference",
+      "_ref": "brand-ever-go"
+    },
+    "productType": "Perfume",
+    "audience": "Women",
+    "scentNotes": [
+      "Rose",
+      "musk"
+    ],
+    "description": "Soft Taif rose on a clean musk base. Light enough for every day.",
+    "sizes": [
+      {
+        "_type": "sizeOption",
+        "_key": "s-0-30ml",
+        "label": "30ml",
+        "price": 35,
+        "inStock": true
+      }
+    ],
+    "sortOrder": 4,
+    "_createdAt": "2026-01-01T00:00:00Z"
+  },
+  {
+    "_id": "product-oud-al-layl",
+    "_type": "product",
+    "name": "Oud Al Layl",
+    "slug": {
+      "_type": "slug",
+      "current": "oud-al-layl"
+    },
+    "category": {
+      "_type": "reference",
+      "_ref": "category-perfumes"
+    },
+    "brand": {
+      "_type": "reference",
+      "_ref": "brand-ever-go"
+    },
+    "productType": "Perfume",
+    "audience": "Men",
+    "scentNotes": [
+      "Oud",
+      "smoky",
+      "woody"
+    ],
+    "description": "Deep smoky oud for evenings and special occasions.",
+    "sizes": [
+      {
+        "_type": "sizeOption",
+        "_key": "s-0-30ml",
+        "label": "30ml",
+        "price": 35,
+        "inStock": true
+      }
+    ],
+    "sortOrder": 5,
+    "_createdAt": "2026-01-01T00:00:00Z"
+  },
+  {
+    "_id": "product-bahr",
+    "_type": "product",
+    "name": "Bahr",
+    "slug": {
+      "_type": "slug",
+      "current": "bahr"
+    },
+    "category": {
+      "_type": "reference",
+      "_ref": "category-perfumes"
+    },
+    "brand": {
+      "_type": "reference",
+      "_ref": "brand-ever-go"
+    },
+    "productType": "Perfume",
+    "audience": "Men",
+    "scentNotes": [
+      "Fresh",
+      "citrus"
+    ],
+    "description": "Clean citrus and sea notes. Great for hot days.",
+    "sizes": [
+      {
+        "_type": "sizeOption",
+        "_key": "s-0-30ml",
+        "label": "30ml",
+        "price": 35,
+        "inStock": false
+      }
+    ],
+    "sortOrder": 6,
+    "_createdAt": "2026-01-01T00:00:00Z"
+  },
+  {
+    "_id": "product-white-musk-roll-on",
+    "_type": "product",
+    "name": "White Musk Roll-on",
+    "slug": {
+      "_type": "slug",
+      "current": "white-musk-roll-on"
+    },
+    "category": {
+      "_type": "reference",
+      "_ref": "category-oils"
+    },
+    "brand": {
+      "_type": "reference",
+      "_ref": "brand-ever-go"
+    },
+    "productType": "Roll-on / Dip stick (oil)",
+    "audience": "Unisex",
+    "scentNotes": [
+      "Soft musk"
+    ],
+    "description": "Alcohol-free perfume oil in a handy roll-on.",
+    "sizes": [
+      {
+        "_type": "sizeOption",
+        "_key": "s-0-3ml",
+        "label": "3ml",
+        "price": 15,
+        "inStock": true
+      },
+      {
+        "_type": "sizeOption",
+        "_key": "s-1-6ml",
+        "label": "6ml",
+        "price": 35,
+        "inStock": true
+      },
+      {
+        "_type": "sizeOption",
+        "_key": "s-2-10ml",
+        "label": "10ml",
+        "price": 20,
+        "inStock": true
+      }
+    ],
+    "sortOrder": 7,
+    "_createdAt": "2026-01-01T00:00:00Z"
+  },
+  {
+    "_id": "product-musk-tahara-roll-on",
+    "_type": "product",
+    "name": "Musk Tahara Roll-on",
+    "slug": {
+      "_type": "slug",
+      "current": "musk-tahara-roll-on"
+    },
+    "category": {
+      "_type": "reference",
+      "_ref": "category-oils"
+    },
+    "brand": {
+      "_type": "reference",
+      "_ref": "brand-ever-go"
+    },
+    "productType": "Roll-on / Dip stick (oil)",
+    "audience": "Women",
+    "scentNotes": [
+      "Clean musk",
+      "powdery"
+    ],
+    "description": "Silky white musk oil that sits close to the skin.",
+    "sizes": [
+      {
+        "_type": "sizeOption",
+        "_key": "s-0-3ml",
+        "label": "3ml",
+        "price": 15,
+        "inStock": true
+      },
+      {
+        "_type": "sizeOption",
+        "_key": "s-1-6ml",
+        "label": "6ml",
+        "price": 30,
+        "inStock": true
+      }
+    ],
+    "sortOrder": 8,
+    "_createdAt": "2026-01-01T00:00:00Z"
+  },
+  {
+    "_id": "product-electric-bukhoor-burner",
+    "_type": "product",
+    "name": "Electric Bukhoor Burner",
+    "slug": {
+      "_type": "slug",
+      "current": "electric-bukhoor-burner"
+    },
+    "category": {
+      "_type": "reference",
+      "_ref": "category-bukhoor"
+    },
+    "productType": "Bukhoor burner – electric",
+    "scentNotes": [],
+    "description": "USB-rechargeable burner for bukhoor and oud chips.",
+    "sizes": [
+      {
+        "_type": "sizeOption",
+        "_key": "s-0-gold",
+        "label": "Gold",
+        "price": 250,
+        "inStock": true
+      },
+      {
+        "_type": "sizeOption",
+        "_key": "s-1-black",
+        "label": "Black",
+        "price": 250,
+        "inStock": true
+      }
+    ],
+    "sortOrder": 9,
+    "_createdAt": "2026-01-01T00:00:00Z"
+  },
+  {
+    "_id": "product-oud-chips",
+    "_type": "product",
+    "name": "Oud Chips",
+    "slug": {
+      "_type": "slug",
+      "current": "oud-chips"
+    },
+    "category": {
+      "_type": "reference",
+      "_ref": "category-bukhoor"
+    },
+    "brand": {
+      "_type": "reference",
+      "_ref": "brand-ever-go"
+    },
+    "productType": "Bukhoor & oud chips",
+    "scentNotes": [
+      "Oud",
+      "smoky"
+    ],
+    "description": "Natural oud wood chips for your burner. Fills the home with warm smoke.",
+    "sizes": [
+      {
+        "_type": "sizeOption",
+        "_key": "s-0-25g",
+        "label": "25g",
+        "price": 60,
+        "inStock": true
+      },
+      {
+        "_type": "sizeOption",
+        "_key": "s-1-50g",
+        "label": "50g",
+        "price": 110,
+        "inStock": true
+      }
+    ],
+    "sortOrder": 10,
+    "_createdAt": "2026-01-01T00:00:00Z"
+  },
+  {
+    "_id": "product-shea-body-lotion",
+    "_type": "product",
+    "name": "Shea Body Lotion",
+    "slug": {
+      "_type": "slug",
+      "current": "shea-body-lotion"
+    },
+    "category": {
+      "_type": "reference",
+      "_ref": "category-beauty"
+    },
+    "brand": {
+      "_type": "reference",
+      "_ref": "brand-ever-go"
+    },
+    "productType": "Body care",
+    "audience": "Unisex",
+    "scentNotes": [
+      "Vanilla"
+    ],
+    "description": "Rich shea lotion that keeps skin soft all day.",
+    "sizes": [
+      {
+        "_type": "sizeOption",
+        "_key": "s-0-400ml",
+        "label": "400ml",
+        "price": 65,
+        "inStock": true
+      }
+    ],
+    "sortOrder": 11,
+    "_createdAt": "2026-01-01T00:00:00Z"
+  },
+  {
+    "_id": "product-rose-body-mist",
+    "_type": "product",
+    "name": "Rose Body Mist",
+    "slug": {
+      "_type": "slug",
+      "current": "rose-body-mist"
+    },
+    "category": {
+      "_type": "reference",
+      "_ref": "category-beauty"
+    },
+    "brand": {
+      "_type": "reference",
+      "_ref": "brand-ever-go"
+    },
+    "productType": "Body care",
+    "audience": "Women",
+    "scentNotes": [
+      "Rose"
+    ],
+    "description": "A light rose mist for a fresh lift any time.",
+    "sizes": [
+      {
+        "_type": "sizeOption",
+        "_key": "s-0-250ml",
+        "label": "250ml",
+        "price": 45,
+        "inStock": true
+      }
+    ],
+    "badge": "new",
+    "sortOrder": 12,
+    "_createdAt": "2026-01-01T00:00:00Z"
+  },
+  {
+    "_id": "product-stress-ball",
+    "_type": "product",
+    "name": "Stress Ball",
+    "slug": {
+      "_type": "slug",
+      "current": "stress-ball"
+    },
+    "category": {
+      "_type": "reference",
+      "_ref": "category-more"
+    },
+    "productType": "Sports – balls",
+    "scentNotes": [],
+    "description": "Soft squeeze ball for stress relief, assorted colours.",
+    "sizes": [
+      {
+        "_type": "sizeOption",
+        "_key": "s-0-one-size",
+        "label": "One size",
+        "price": 15,
+        "inStock": true,
+        "bulkTiers": [
+          {
+            "_type": "tier",
+            "_key": "t10",
+            "minQty": 10,
+            "price": 12
+          }
+        ]
+      }
+    ],
+    "sortOrder": 13,
+    "_createdAt": "2026-01-01T00:00:00Z"
+  },
+  {
+    "_id": "siteSettings",
+    "_type": "siteSettings",
+    "whatsappNumber": "26770000000",
+    "whatsappDisplay": "+267 70 000 000",
+    "promoText": "Any 30 ml perfume",
+    "promoPrice": "P35",
+    "heroSlides": [
+      {
+        "_type": "heroSlide",
+        "_key": "slide1",
+        "eyebrow": "Welcome to EVER-GO",
+        "eyebrowArabic": "أهلاً",
+        "titleBefore": "Perfumes & ",
+        "titleAccent": "beauty care",
+        "titleAfter": " products",
+        "text": "Arabian perfumes, perfume oils, bukhoor and body care. Fill your bag and order on WhatsApp.",
+        "primaryLabel": "Shop all products",
+        "primaryLink": "/shop",
+        "secondaryLabel": "Shop by brand",
+        "secondaryLink": "/brands",
+        "green": false,
+        "product": {
+          "_type": "reference",
+          "_ref": "product-khamrah"
+        }
+      },
+      {
+        "_type": "heroSlide",
+        "_key": "slide2",
+        "eyebrow": "One price",
+        "titleBefore": "Any 30 ml perfume, ",
+        "titleAccent": "P35.",
+        "text": "Choose by how it smells, not by the price. Buying for a shop? Bulk prices apply on their own.",
+        "primaryLabel": "Shop perfumes",
+        "primaryLink": "/shop/perfumes",
+        "green": true,
+        "product": {
+          "_type": "reference",
+          "_ref": "product-oud-mood"
+        }
+      },
+      {
+        "_type": "heroSlide",
+        "_key": "slide3",
+        "eyebrow": "For the home",
+        "titleBefore": "Bukhoor, oud chips & ",
+        "titleAccent": "burners",
+        "text": "Electric and classic burners, oud chips and bukhoor to scent every room.",
+        "primaryLabel": "Shop bukhoor",
+        "primaryLink": "/shop/bukhoor",
+        "green": false
+      }
+    ],
+    "bestsellers": [
+      {
+        "_type": "reference",
+        "_ref": "product-khamrah",
+        "_key": "product-khamrah"
+      },
+      {
+        "_type": "reference",
+        "_ref": "product-lattafa-asad",
+        "_key": "product-lattafa-asad"
+      },
+      {
+        "_type": "reference",
+        "_ref": "product-oud-mood",
+        "_key": "product-oud-mood"
+      },
+      {
+        "_type": "reference",
+        "_ref": "product-white-musk-roll-on",
+        "_key": "product-white-musk-roll-on"
+      }
+    ],
+    "deliveryText": "We deliver countrywide with Sprint Courier.\n\nThe courier fee depends on your town. We confirm it on WhatsApp before we send your order.",
+    "returnsText": "If something arrives damaged or isn't what you ordered, message us on WhatsApp with a photo and your order details.",
+    "courierFees": [],
+    "_createdAt": "2026-01-01T00:00:00Z"
+  }
+]
