@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useCatalog } from "@/context/CatalogContext";
+import { LIFESTYLE_IMAGES } from "@/lib/storeImages";
 import { Bottle, ProductVisual, RemoteImage } from "./ProductArt";
 
 /* Each slide's picture sits on its own colour, so the hero has real contrast before photos are added. */
@@ -28,9 +29,18 @@ function SlideVisual({ slide, index }) {
   const { byId } = useCatalog();
   const product = byId[slide.productId];
   const panel = PANELS[index % PANELS.length];
+  const lifestyle = LIFESTYLE_IMAGES[index % LIFESTYLE_IMAGES.length];
   return (
     <div className="v">
-      {slide.image ? <RemoteImage src={slide.image} alt="" width={1200} /> : product ? <ProductVisual product={product} width={1200} {...panel} /> : <Scene {...panel} />}
+      {slide.image ? (
+        <RemoteImage src={slide.image} alt="" width={1200} />
+      ) : lifestyle ? (
+        <RemoteImage src={lifestyle} alt="" width={1200} />
+      ) : product ? (
+        <ProductVisual product={product} width={1200} {...panel} />
+      ) : (
+        <Scene {...panel} />
+      )}
     </div>
   );
 }

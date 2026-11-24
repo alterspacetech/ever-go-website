@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { CompareIcon, HeartFilledIcon, HeartIcon, WhatsAppIcon } from "@/components/Icons";
+import { HeartFilledIcon, HeartIcon, WhatsAppIcon } from "@/components/Icons";
 import { ProductVisual } from "@/components/ProductArt";
 import ProductRail from "@/components/ProductRail";
 import { Price, Quantity, VariantPicker } from "@/components/ProductControls";
@@ -64,7 +64,7 @@ function ProductTabs({ product, group }) {
 
 export default function ProductView({ id }) {
   const { byId, getGroup, tiersFor, unitPrice, relatedProducts } = useCatalog();
-  const { wish, compare, toggleWish, toggleCompare, addToBag } = useStore();
+  const { wish, toggleWish, addToBag } = useStore();
   const whatsapp = useWhatsApp();
   const product = byId[id];
   const [size, setSize] = useState(firstAvailable(product).size);
@@ -73,7 +73,6 @@ export default function ProductView({ id }) {
   const tiers = tiersFor(product, variant.size);
   const unit = unitPrice(product, variant, qty);
   const wished = wish.includes(product.id);
-  const compared = compare.includes(product.id);
   const group = getGroup(product.group);
   const type = typeLine(product, group);
 
@@ -117,7 +116,7 @@ export default function ProductView({ id }) {
             )}
             {variant.inStock ? (
               <>
-                <div className="buy">
+                <div className="buy buy-main">
                   <Quantity value={qty} onChange={(q) => setQty(Math.max(1, q))} />
                   <button className="btn red" onClick={add}>Add to bag · {money(unit * qty)}</button>
                 </div>
@@ -133,15 +132,17 @@ export default function ProductView({ id }) {
                 {wished ? <HeartFilledIcon /> : <HeartIcon />}
                 {wished ? "In wishlist" : "Add to wishlist"}
               </button>
-              <button onClick={() => toggleCompare(product.id)} aria-pressed={compared}>
-                <CompareIcon />
-                {compared ? "In compare" : "Compare"}
-              </button>
               <a href={whatsapp.link(`Hello EVER-GO, I have a question about ${product.name}.`)} target="_blank" rel="noopener">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M3.5 20.5l1.3-3.9A8.5 8.5 0 1 1 8 19.6Z" /></svg>
                 Ask a question
               </a>
             </div>
+            {variant.inStock && (
+              <div className="buy-sticky" aria-hidden="true">
+                <button className="btn red" onClick={add}>Add · {money(unit * qty)}</button>
+                <button className="btn green" onClick={buyNow}><WhatsAppIcon />WhatsApp</button>
+              </div>
+            )}
           </div>
         </div>
 

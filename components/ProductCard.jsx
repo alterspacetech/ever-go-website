@@ -6,7 +6,7 @@ import { useStore } from "@/context/StoreContext";
 import { minPrice, productFlag, typeLine } from "@/lib/catalog";
 import { money } from "@/lib/format";
 import { notifyText } from "@/lib/whatsappMessages";
-import { CompareIcon, EyeIcon, HeartFilledIcon, HeartIcon } from "./Icons";
+import { EyeIcon, HeartFilledIcon, HeartIcon } from "./Icons";
 import { ProductVisual } from "./ProductArt";
 
 function AddAction({ product, inBag }) {
@@ -36,12 +36,11 @@ function AddAction({ product, inBag }) {
 
 export default function ProductCard({ product }) {
   const { getGroup, tiersFor } = useCatalog();
-  const { bag, wish, compare, toggleWish, toggleCompare, openQuickView } = useStore();
+  const { bag, wish, toggleWish, openQuickView } = useStore();
   const flag = productFlag(product);
   const group = getGroup(product.group);
   const inBag = product.variants.reduce((sum, v) => sum + (bag[`${product.id}|${v.size}`] || 0), 0);
   const wished = wish.includes(product.id);
-  const compared = compare.includes(product.id);
   const hasBulk = product.variants.some((v) => tiersFor(product, v.size).length);
 
   return (
@@ -57,9 +56,6 @@ export default function ProductCard({ product }) {
           </button>
           <button className="hov" onClick={() => openQuickView(product.id)} aria-label="Quick view">
             <EyeIcon />
-          </button>
-          <button className="hov cmp" onClick={() => toggleCompare(product.id)} aria-pressed={compared} aria-label={`${compared ? "Remove from" : "Add to"} compare`}>
-            <CompareIcon />
           </button>
         </div>
       </div>

@@ -21,8 +21,8 @@ export const siteSettings = defineType({
     defineField({ name: "instagram", title: "Instagram link", type: "url", group: "contact" }),
     defineField({ name: "tiktok", title: "TikTok link", type: "url", group: "contact" }),
 
-    defineField({ name: "promoText", title: "Header offer text", description: "For example Any 30 ml perfume. Leave empty to hide the offer.", type: "string", group: "home" }),
-    defineField({ name: "promoPrice", title: "Header offer price", description: "For example P35.", type: "string", group: "home" }),
+    defineField({ name: "promoText", title: "Header offer text", description: "For example Perfumes from. Leave empty to hide the offer.", type: "string", group: "home" }),
+    defineField({ name: "promoPrice", title: "Header offer price", description: "For example P350.", type: "string", group: "home" }),
     defineField({
       name: "heroSlides",
       title: "Hero slides",
@@ -166,6 +166,8 @@ export const siteSettings = defineType({
     defineField({ name: "footerImage", title: "Footer image", description: "Optional. Shows beside the sign-up form.", type: "image", group: "text" }),
     defineField({ name: "footerBlurb", title: "Footer description", type: "string", group: "text" }),
     defineField({ name: "priceNote", title: "Currency note in the footer", type: "string", group: "text" }),
+    defineField({ name: "aboutTitle", title: "About heading", type: "string", group: "text" }),
+    defineField({ name: "aboutText", title: "About text", description: "Leave a blank line between paragraphs.", type: "text", rows: 6, group: "text" }),
   ],
   preview: { prepare: () => ({ title: "Site settings" }) },
 });

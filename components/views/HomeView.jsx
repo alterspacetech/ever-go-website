@@ -9,9 +9,11 @@ import { ProductArt, ProductVisual } from "@/components/ProductArt";
 import ProductCard from "@/components/ProductCard";
 import ProductRail from "@/components/ProductRail";
 import Reveal from "@/components/Reveal";
+import StoreGallery from "@/components/StoreGallery";
 import { useCatalog } from "@/context/CatalogContext";
 import { minPrice } from "@/lib/catalog";
-import { money, plural } from "@/lib/format";
+import { money, paragraphs, plural } from "@/lib/format";
+import { STORE_IMAGES } from "@/lib/storeImages";
 
 const PERK_ICONS = { truck: TruckIcon, card: CardIcon, chat: ChatIcon, bulk: BulkIcon };
 
@@ -199,6 +201,30 @@ export default function HomeView() {
       )}
 
       <Bestsellers />
+
+      {(settings.aboutTitle || settings.aboutText) && (
+        <Reveal as="section" className="blk about-home">
+          <div className="wrap">
+            <div className="about-split">
+              <div className="about-copy">
+                {settings.aboutTitle && <h2>{settings.aboutTitle}</h2>}
+                {paragraphs(settings.aboutText).map((text) => <p key={text}>{text}</p>)}
+                <Link className="lnk" href="/about">More about us</Link>
+              </div>
+              <div className="about-photos compact">
+                {STORE_IMAGES.slice(0, 4).map((src) => (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img key={src} src={src} alt="" loading="lazy" />
+                ))}
+              </div>
+            </div>
+          </div>
+        </Reveal>
+      )}
+
+      <Reveal>
+        <StoreGallery />
+      </Reveal>
 
       {settings.orderSteps.length > 0 && (
         <Reveal as="section" className="blk">

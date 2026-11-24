@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import SocialLinks from "@/components/SocialLinks";
+import StoreGallery from "@/components/StoreGallery";
 import { useCatalog, useWhatsApp } from "@/context/CatalogContext";
 import { useStore } from "@/context/StoreContext";
 
@@ -47,6 +48,7 @@ export default function ContactView() {
           </div>
         </div>
       </div>
+      <StoreGallery title="Visit the shop" intro="Lobengula Avenue, Francistown — next to John Mackenzie School." limit={6} />
     </main>
   );
 }

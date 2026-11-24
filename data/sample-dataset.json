@@ -8,7 +8,7 @@
       "current": "perfumes"
     },
     "arabicName": "عطور",
-    "blurb": "Long-lasting Arabian and designer-inspired perfumes. Every 30 ml bottle is P35.",
+    "blurb": "Long-lasting Arabian and designer-inspired perfumes. 100 ml bottles from P350.",
     "sortOrder": 1,
     "_createdAt": "2026-01-01T00:00:00Z"
   },
@@ -381,7 +381,7 @@
   {
     "_id": "product-white-musk-roll-on",
     "_type": "product",
-    "name": "White Musk Roll-on",
+    "name": "White Musk Roll-On",
     "slug": {
       "_type": "slug",
       "current": "white-musk-roll-on"
@@ -429,7 +429,7 @@
   {
     "_id": "product-musk-tahara-roll-on",
     "_type": "product",
-    "name": "Musk Tahara Roll-on",
+    "name": "Musk Tahara Roll-On",
     "slug": {
       "_type": "slug",
       "current": "musk-tahara-roll-on"
@@ -650,20 +650,25 @@
   {
     "_id": "siteSettings",
     "_type": "siteSettings",
-    "whatsappNumber": "26770000000",
-    "whatsappDisplay": "+267 70 000 000",
-    "promoText": "Any 30 ml perfume",
-    "promoPrice": "P35",
+    "whatsappNumber": "26771779845",
+    "whatsappDisplay": "+267 71 779 845",
+    "instagram": "https://www.instagram.com/arabic.perfumes.botswana/",
+    "tiktok": "https://www.tiktok.com/@ever.go4",
+    "address": "Lobengula Avenue, next to John Mackenzie School, Francistown, Botswana\nNear Cut Price, opposite BTC office / old Mascom office",
+    "aboutTitle": "About EVER-GO",
+    "aboutText": "EVER-GO Fragrance World is a perfume shop in Francistown, Botswana.\n\nYou'll find us on Lobengula Avenue, next to John Mackenzie School — near Cut Price, opposite the BTC office and the old Mascom office.\n\nWe stock Arabian and designer-inspired fragrances from houses like Lattafa and Armaf. Fill a bag on this site and order on WhatsApp, or visit us in person.",
+    "promoText": "Perfumes from",
+    "promoPrice": "P350",
     "heroSlides": [
       {
         "_type": "heroSlide",
         "_key": "slide1",
         "eyebrow": "Welcome to EVER-GO",
         "eyebrowArabic": "أهلاً",
-        "titleBefore": "Perfumes & ",
-        "titleAccent": "beauty care",
-        "titleAfter": " products",
-        "text": "Arabian perfumes, perfume oils, bukhoor and body care. Fill your bag and order on WhatsApp.",
+        "titleBefore": "Arabian ",
+        "titleAccent": "perfumes",
+        "titleAfter": " for Botswana",
+        "text": "Lattafa, Armaf and more. Fill your bag and order on WhatsApp.",
         "primaryLabel": "Shop all products",
         "primaryLink": "/shop",
         "secondaryLabel": "Shop by brand",
@@ -677,10 +682,10 @@
       {
         "_type": "heroSlide",
         "_key": "slide2",
-        "eyebrow": "One price",
-        "titleBefore": "Any 30 ml perfume, ",
-        "titleAccent": "P35.",
-        "text": "Choose by how it smells, not by the price. Buying for a shop? Bulk prices apply on their own.",
+        "eyebrow": "Our range",
+        "titleBefore": "100 ml perfumes from ",
+        "titleAccent": "P350.",
+        "text": "Choose by how it smells. Buying for a shop? Bulk prices apply on their own.",
         "primaryLabel": "Shop perfumes",
         "primaryLink": "/shop/perfumes",
         "green": true,
@@ -692,12 +697,12 @@
       {
         "_type": "heroSlide",
         "_key": "slide3",
-        "eyebrow": "For the home",
-        "titleBefore": "Bukhoor, oud chips & ",
-        "titleAccent": "burners",
-        "text": "Electric and classic burners, oud chips and bukhoor to scent every room.",
-        "primaryLabel": "Shop bukhoor",
-        "primaryLink": "/shop/bukhoor",
+        "eyebrow": "Need something else?",
+        "titleBefore": "Ask us to ",
+        "titleAccent": "source it",
+        "text": "Looking for a scent we don't stock yet? Send a special order and we'll try to bring it in.",
+        "primaryLabel": "Request a special order",
+        "primaryLink": "/special-orders",
         "green": false
       }
     ],

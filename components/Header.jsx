@@ -7,7 +7,7 @@ import { useCatalog, useWhatsApp } from "@/context/CatalogContext";
 import { useStore } from "@/context/StoreContext";
 import { minPrice } from "@/lib/catalog";
 import { money, plural } from "@/lib/format";
-import { BagIcon, CompareIcon, HeartIcon, MenuIcon } from "./Icons";
+import { BagIcon, HeartIcon, MenuIcon } from "./Icons";
 import Logo from "./Logo";
 import { ProductVisual } from "./ProductArt";
 import SearchForm from "./SearchForm";
@@ -23,6 +23,7 @@ function UtilityBar() {
           {settings.deliveryLine && <span>{settings.deliveryLine}</span>}
         </div>
         <div className="r">
+          <Link href="/about">About</Link>
           <Link href="/special-orders">Special orders</Link>
           <Link href="/delivery">Delivery &amp; returns</Link>
           <Link href="/contact">Contact</Link>
@@ -58,7 +59,7 @@ function MobileNav({ open }) {
       {links.brands}
       <h4>Help</h4>
       <Link href="/wishlist">Wishlist</Link>
-      <Link href="/compare">Compare</Link>
+      <Link href="/about">About</Link>
       <Link href="/special-orders">Special orders</Link>
       <Link href="/delivery">Delivery &amp; returns</Link>
       <Link href="/contact">Contact</Link>
@@ -144,6 +145,7 @@ function CategoryBar() {
     ["/shop", "Shop"],
     ...visibleGroups.slice(0, 4).map((g) => [`/shop/${g.id}`, g.name, g.id]),
     ["/brands", "Brands"],
+    ["/about", "About"],
     ["/special-orders", "Special orders"],
     ["/contact", "Contact"],
   ];
@@ -185,7 +187,7 @@ function CategoryBar() {
 }
 
 export default function Header() {
-  const { wish, compare, itemCount, total, openBag } = useStore();
+  const { wish, itemCount, total, openBag } = useStore();
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -207,10 +209,6 @@ export default function Header() {
             </div>
             <SearchForm />
             <div className="hicons">
-              <Link className="hide-s" href="/compare" aria-label="Compare">
-                <CompareIcon strokeWidth={1.6} />
-                {compare.length > 0 && <span className="badge">{compare.length}</span>}
-              </Link>
               <Link href="/wishlist" aria-label="Wishlist">
                 <HeartIcon strokeWidth={1.6} />
                 {wish.length > 0 && <span className="badge">{wish.length}</span>}

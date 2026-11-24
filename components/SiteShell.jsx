@@ -1,28 +1,15 @@
 "use client";
 
 import { useEffect } from "react";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useWhatsApp } from "@/context/CatalogContext";
-import { useStore } from "@/context/StoreContext";import { money, plural } from "@/lib/format";
+import { useStore } from "@/context/StoreContext";
+import { money, plural } from "@/lib/format";
 import BagDrawer from "./BagDrawer";
 import Footer from "./Footer";
 import Header from "./Header";
 import { WhatsAppIcon } from "./Icons";
 import QuickView from "./QuickView";
-
-function CompareBar() {
-  const { compare, clearCompare } = useStore();
-  const pathname = usePathname();
-  if (!compare.length || pathname === "/compare") return null;
-  return (
-    <div className="cmpbar">
-      <span>{plural(compare.length, "product")} to compare</span>
-      <Link href="/compare">Compare</Link>
-      <button onClick={clearCompare}>Clear</button>
-    </div>
-  );
-}
 
 function MobileBagBar() {
   const { itemCount, total, openBag } = useStore();
@@ -79,9 +66,8 @@ export default function SiteShell({ children }) {
       <Header />
       {children}
       <Footer />
-      <CompareBar />
       <MobileBagBar />
-        <WhatsAppButton />
+      <WhatsAppButton />
       <div
         className={`scrim${bagOpen || quickViewId ? " open" : ""}`}
         onClick={() => {

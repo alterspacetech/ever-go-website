@@ -4,7 +4,7 @@ import { StoreProvider } from "@/context/StoreContext";
 import { getSiteData } from "@/lib/data";
 import "./globals.css";
 
-const DESCRIPTION = "Arabian perfumes, perfume oils, bukhoor and body care, delivered across Botswana. Fill your bag and order on WhatsApp.";
+const DESCRIPTION = "Arabian perfumes for Botswana. Fill your bag and order on WhatsApp.";
 
 export const metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),

@@ -48,10 +48,10 @@ export default function Footer() {
           <div>
             <h4>Help</h4>
             <ul>
+              <li><Link href="/about">About</Link></li>
               <li><Link href="/special-orders">Special orders</Link></li>
               <li><Link href="/delivery">Delivery &amp; returns</Link></li>
               <li><Link href="/wishlist">Wishlist</Link></li>
-              <li><Link href="/compare">Compare</Link></li>
               <li><Link href="/contact">Contact</Link></li>
             </ul>
           </div>
@@ -67,7 +67,7 @@ export default function Footer() {
         </div>
 
         <div className="base">
-          <span>© {new Date().getFullYear()} EVER-GO Fragrance World</span>
+          <span>© 2026 EVER-GO Fragrance World</span>
           {settings.priceNote && <span>{settings.priceNote}</span>}
           <a href="https://alterspace.tech" target="_blank" rel="noopener">Built by <b>AlterSpace</b></a>
         </div>
